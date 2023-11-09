@@ -4,23 +4,21 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
-import java.nio.file.Paths;
 import java.util.*;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class simpleTest  extends BaseTest{
+public class SimpleTest extends BaseTest{
 //    Logger logger=new Logger(simpleTest.class);
-    Logger logger=Logger.getLogger(String.valueOf(simpleTest.class));
+    Logger logger=Logger.getLogger(String.valueOf(SimpleTest.class));
 
     @Test
     public void readDataFromSrcFile() throws IOException {
 //        ClassLoader classLoader=Thread.currentThread().getContextClassLoader();
 //        InputStream inputStream=this.getClass().getClassLoader().getResourceAsStream
 //                ("resources/inputdata.csv");
-        InputStream inputStream=simpleTest.class.getClassLoader().getResourceAsStream
+        InputStream inputStream= SimpleTest.class.getClassLoader().getResourceAsStream
                 ("inputdata.csv");
 
 //        URL url = getClass().getResource
@@ -39,7 +37,7 @@ public class simpleTest  extends BaseTest{
 //        logger.info(test1.getPath());
 //        logger.info(test2.getPath());
 //        logger.info(test3.getPath());
-        System.out.println(inputStream);
+        System.out.println(inputStream.toString());
         StringBuilder inputContent=new StringBuilder();
         assert inputStream!=null;
         Scanner scanner=new Scanner(inputStream).useDelimiter("\\n");
