@@ -1,4 +1,4 @@
-package com.spring.selenium.sampleClassesForOOPS;
+package com.spring.selenium.sampleClassesForOOPS.intefaceFolder;
 
 public interface ForeignInterNational {
     public void applyVisa();

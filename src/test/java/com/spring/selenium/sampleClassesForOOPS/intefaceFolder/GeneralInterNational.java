@@ -1,6 +1,6 @@
-package com.spring.selenium.sampleClassesForOOPS;
+package com.spring.selenium.sampleClassesForOOPS.intefaceFolder;
 
-public class GeneralInterNational implements ForeignInterNational{
+public class GeneralInterNational implements ForeignInterNational {
     @Override
     public void applyVisa() {
         System.out.println("General implementation for Interface method - applyVisa");
