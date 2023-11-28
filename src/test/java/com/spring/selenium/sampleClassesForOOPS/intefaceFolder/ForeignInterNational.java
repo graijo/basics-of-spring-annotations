@@ -1,6 +1,7 @@
 package com.spring.selenium.sampleClassesForOOPS.intefaceFolder;
 
 public interface ForeignInterNational {
-    public void applyVisa();
+     int a=6;
+    public String applyVisa(String a);
     public void findCollege();
 }

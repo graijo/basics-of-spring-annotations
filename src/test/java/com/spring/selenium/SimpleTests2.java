@@ -124,7 +124,120 @@ public class SimpleTests2 {
         System.out.println(Arrays.stream(s2).toList());
 
         System.arraycopy(c2,0,cArr,0,2);
+
+
+//        Queue<String> queue=new ArrayDeque<>();
+        Queue<Integer> queue=new PriorityQueue<>();
+        queue.add(5);
+        queue.add(3);
+        queue.add(9);
+        queue.add(39);
+        queue.add(1);
+        System.out.println(queue);
+        queue.poll();
+        System.out.println("removed top element "+queue);
+        System.out.println("1st element "+queue.peek());
+        System.out.println(queue);
+        Stack<String> stack = new Stack<String>();
+        stack.push("abc");
+        stack.add("fgh");
+        System.out.println(stack);
+
+        List<Integer> list=new ArrayList<>();
+        list.add(1);
+        list.add(5);
+        list.add(3);
+        list.add(66);
+        list.add(6);
+        System.out.println("Max "+list.stream().max(Comparator.naturalOrder()));
+        System.out.println("index get "+list.get(3));
+        System.out.println(list);
+        System.out.println( list.equals(queue));
+ListIterator<Integer> integerIterator=list.listIterator();
+while (integerIterator.hasNext()){
+    System.out.println("element of index  "+integerIterator.nextIndex()+" is "+integerIterator.next());
+}
+list.set(0,1000);
+        System.out.println(list);
+
+        list.remove(list.get(0));
+        System.out.println("list.remove(list.get(0))  "+list);
+        System.out.println(list.get(0).hashCode());
+        System.out.println("a".hashCode());
+
     }
 
+    @Test
+    public void functionalPgm(){
+        List<String> list=new ArrayList<>(List.of("abc","flower","carpter"));
+        list.add("edgh");
+        System.out.println(list.toString());
+        System.out.println(list.stream().findFirst());
+        System.out.println( );
 
+        list.stream().forEach(
+                element ->System.out.println(element)
+        );
+
+        System.out.println("Filter using functional paramters " );
+        list.stream().
+                filter(element -> element.startsWith("ca"))
+                .forEach(element->System.out.println(element));
+
+        list.stream()
+                .filter(element-> element.equals("flower"))
+                .forEach(element ->
+                        {System.out.println("checking equals condition ");
+                        System.out.println(element);}
+                );
+
+
+        //find sume of  numbers
+
+        List<Integer> integers=new ArrayList<>(List.of(2,4,1,2,3));
+       Integer sum= integers.stream()
+                .reduce(
+                        0,
+                        (element1,element2) -> element1+element2
+                );
+        System.out.println(sum);
+
+
+        //find sum of even numbers
+
+        List<Integer> integers1=new ArrayList<>(List.of(2,4,1,2,3));
+        Integer sumEven= integers1.stream()
+                .filter(element->element%2==0)
+                .reduce(
+                        0,
+                        (element1,element2) -> element1+element2
+                );
+        System.out.println(sumEven);
+
+
+  }
+
+
+    @Test
+    public void test1(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 }

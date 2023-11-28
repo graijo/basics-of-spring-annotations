@@ -35,12 +35,15 @@ public class Runner {
 
 //        Interface
         ForeignInterNational foreignInterNational=new GeneralInterNational();
-        foreignInterNational.applyVisa();
+        String countryApplied;
+        countryApplied=foreignInterNational.applyVisa(" for Canada");
+        System.out.println(countryApplied);
         foreignInterNational.findCollege();
 
         //Interface same method implementation in another class
         foreignInterNational=new GeneralInterNational1();
-        foreignInterNational.applyVisa();
+        countryApplied=foreignInterNational.applyVisa(" for Germany");
+        System.out.println(countryApplied);
         foreignInterNational.findCollege();
 
 
