@@ -2,6 +2,7 @@ package com.spring.selenium;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class SimpleTests2 {
@@ -222,22 +223,72 @@ list.set(0,1000);
     public void test1(){
 
 
+//        Hashtable hashtable=new Hashtable();
+//        HashMap hashMap;
+//
+//        List<String> list=new ArrayList<>(List.of("India","is","my","country"));
+//        list.stream().forEach(element -> System.out.print(element));
+
+       List<Integer> integerList=new ArrayList<>(List.of(55,55,43,6,21));
+        Integer sum=integerList.stream()
+                .reduce(1000,
+        (el1,el2)->(el1-el2)
+
+
+        );
+        System.out.println(sum);
+        System.err.println("abc");
+
+String s1="abc";
+String s2="abc";
+if(s1==s2){
+    System.out.println("same value");
+}
+        System.out.println(String.join("/ /",s1,s2));
 
 
 
+HashMap<Integer,String> hm;
+Integer i1=new Integer('a');
+        System.out.println(i1);
+
+char c='G';
+if(c>97){
+    System.out.println("lower case char");
+} else if (c>65 & c<96) {
+    System.out.println("upper case char");
+} else if (c<58) {
+    System.out.println("number");
+}
+        Integer integer1 = new Integer("111");
+        System.out.println(integer1);
+        Integer integer2 = new Integer("111");
+        System.out.println(integer2);
 
 
+        System.out.println(integer1==integer2);
+        System.out.println(integer1.equals(integer2));
 
+        Integer integer3 = Integer.valueOf("111");
+        Integer integer4 = Integer.valueOf("111");
+        System.out.println(integer3==integer4);
+        System.out.println(integer3.equals(integer4));
 
+String s3=new String("dfg");
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Europe/Madrid"));
+        Date currentDate = calendar.getTime();
+        System.out.println(currentDate);
+    }
 
-
-
-
-
-
-
-
-
+    @Test
+    public void simpletest2(){
+        int[] intarr;
+        intarr= new int[6];
+        for (int numbers:
+        intarr) {
+            System.out.println(numbers);
+        }
 
     }
+
 }
